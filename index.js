@@ -1,3 +1,18 @@
+import { data, hello, greeting, add } from "./data.js";
+
+console.log(data);
+hello();
+greeting();
+greeting("John");
+
+let newData = data;
+newData.push(4);
+console.log(newData);
+console.log(data);
+
+let result = add(5, 10);
+console.log(result);
+
 // object destructuring - process of extracting properties from object and turn them into variables
 
 const player = {
@@ -69,3 +84,21 @@ let fullName = "Tony Stark";
 for (const char of fullName){
     console.log(char);
 }
+
+// default parameters
+const leadSinger = (singer = "someone") => {
+    console.log(`${singer} is the lead singer`);
+}
+
+leadSinger();
+leadSinger("Chris Martin");
+
+let studentArray = ["Victor", "John", "Mark"];
+function printStudents(students = studentArray){
+    for(const student of students){
+        console.log(student);
+    }
+}
+
+printStudents();
+printStudents(["Blossom", "Buttercup", "Bubbles", "Sam"]);
